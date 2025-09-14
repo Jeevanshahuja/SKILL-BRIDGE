@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>RESULTS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='learn.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="heading"> 
+            <h1>Select the Skill You Want to Learn</h1>
+        </div>
+
+        <div class="skills-container">
+            <div class="skills-box">
+                <h1>Missing Skills</h1>
+                <ul>
+                    {% for skill in data.missing %}
+                    <li>
+                        <a href="{{ url_for('getytcourses', skill=skill) }}">{{ skill }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Path</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ytcourse.css') }}">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="main">
+        <h1 class="heading"> Are you ready to learn?</h1>
+        <div class="cards">
+            <div class = "divide">
+                <h1 class="heading2"> Youtube </h1>
+                {% for course in data %}
+                <div class="card">
+                    <img src="{{ course['thumbnail'] }}" alt="Course Thumbnail" class="thumbnail"> 
+                    <div class="card-content">
+                        <h2 class="name">{{ course['title'] }}</h2>
+                        <p class="institution">Channel -  {{ course['channel'] }}</p>
+                    </div>
+                    <a href="{{ course['playlist_url'] }}" target="_blank" class="learn-btn">✨ Start Learning</a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class = "divide">
+                <h1 class="heading2"> Coursera </h1>
+                {% for course in coursera %}
+                <div class="card">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D12AQHFNRDblsU1xQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1677528528545?e=2147483647&v=beta&t=eyPCiiFetWz9wC8A-2TM_Whvul7DwcZQouin8svwJfc" alt="Course Thumbnail" class="thumbnail"> 
+                    <div class="card-content">
+                        <h2 class="name">{{ course['name'] }}</h2>
+                        <p class="institution">Institution -  {{ course['institution'] }}</p>
+                    </div>
+                    <a href="{{ course['link'] }}" target="_blank" class="learn-btn">✨ Start Learning</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

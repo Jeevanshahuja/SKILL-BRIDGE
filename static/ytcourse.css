@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: url('bg5.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.main {
+    text-align: center;
+    padding: 20px 20px;
+    width: 100%;
+}
+
+.heading {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ffffff;
+    text-shadow: 0 0 2px #00ffff, 0 0 2px #00ffff;
+}
+
+.heading2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin:0;
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.6), 0 0 4px rgba(255, 0, 0, 0.6);
+}
+
+.divide{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    background: rgba(10, 15, 30, 0.95);
+    border: 2px solid #00ffff;
+    border-radius: 16px;
+    min-height: 450px;
+    max-height: 450px;
+    width: 80%;
+    padding: 20px;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+}
+
+.thumbnail {
+    width: 80%;
+    height: 60%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4ae209;
+    margin-bottom: 8px;
+}
+
+.institution {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.learn-btn {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #00ffff;
+    background: transparent;
+    color: #00ffff;
+    transition: all 0.3s ease;
+}
+
+.learn-btn:hover {
+    background: #00ffff;
+    color: black;
+}

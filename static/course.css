@@ -1,0 +1,98 @@
+html {
+    height: 100%;
+    position: relative;
+    background: url('bg5.jpg') center center / cover no-repeat fixed;
+}
+
+html::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    text-align: center;
+}
+
+.main h1 {
+    color: white;
+    margin: 0 0 40px 0;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    height: 220px; 
+    background: linear-gradient(45deg, rgba(8, 9, 62, 0.9), rgba(3, 42, 5, 0.9));
+    border: 3px solid white;
+    padding: 20px;
+    border-radius: 20% 0;
+    margin-bottom: 40px;
+    box-shadow: -4px 4px 10px rgba(0, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+.card-content {
+    flex-grow: 1;
+    width: 100%;
+    overflow: auto;
+    scrollbar-width: none; 
+}
+
+.card-content::-webkit-scrollbar {
+    display: none; 
+}
+
+.card h1:not([class="name"])  {
+    font-size: 18px;
+    margin: 0 0 14px 0;
+    color: white;
+    text-shadow: none;
+}
+
+.card a {
+    font-size: 18px;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 0 8px 0;
+    color: white;
+    background-color: black;
+    background-size: auto;
+    padding: 5px;
+    border: 1px solid white;
+    transition: background-color 0.3s;
+}
+
+.card a:hover {
+    background-color: #00ffff;
+    color: black;
+}
+
+.main .name {
+    font-size: 26px;
+    color: rgb(74, 226, 9);
+    font-weight: bold;
+    margin-bottom: 14px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+}

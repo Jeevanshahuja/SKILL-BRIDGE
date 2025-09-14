@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+html {
+    height: 100%;
+    background: url('bg2.jpg') center center / cover no-repeat fixed;
+    position: relative;
+}
+
+html::before {
+    content: "";
+    position: fixed; 
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: -1;
+}
+
+/* Main container */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10%;
+}
+
+/* Heading */
+.heading h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    text-shadow: 0 0 2px #00ffff, 0 0 2px #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Skills container (side by side) */
+.content {
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Skill & Missing Skills box */
+.content1, .content2 {
+    flex: 1;
+    padding: 20px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid cyan;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    animation: fadeInUp 1.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content1:hover, .content2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px cyan, 0 0 40px cyan;
+}
+
+/* Tips & Projects (stacked one below other) */
+.tips, .projects {
+    width: 70%;
+    padding: 20px;
+    justify-items: center;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid cyan;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    animation: fadeInUp 1.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tips:hover, .projects:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 25px cyan, 0 0 40px cyan;
+}
+
+/* Section Titles */
+.content1 h1, .content2 h1, .tips h1, .projects h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 2px #00ffff, 0 0 2px #00ffff;
+}
+
+/* List items for Skills & Tips */
+.content1 li, .content2 li, .tips li {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    margin: 8px 0;
+    list-style: none;
+    color: white;
+    padding-left: 30px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Icons */
+.content1 li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: cyan;
+}
+.content2 li::before {
+    content: "✖";
+    position: absolute;
+    left: 0;
+    color: red;
+}
+.tips li::before {
+    content: "➜";
+    position: absolute;
+    left: 0;
+    color: rgb(51, 255, 0);
+}
+
+/* Hover effect */
+.content1 li:hover, .content2 li:hover {
+    color: cyan;
+}
+
+/* Projects Section */
+.projects ul {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.projects li {
+    margin-bottom: 15px;
+}
+
+/* Each project link as glowing button */
+.projects li a {
+    display: block;
+    padding: 12px 18px;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    text-decoration: none;
+    color: cyan;
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 12px cyan, inset 0 0 6px cyan;
+    transition: all 0.3s ease;
+    white-space: normal; /* allow wrapping */
+    word-wrap: break-word;
+}
+
+.projects li a:hover {
+    background: cyan;
+    color: black;
+    transform: scale(1.03);
+    box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+}
+
+/* ATS Score */
+.ats h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 10px cyan;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ats .score {
+    color: cyan;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 0 0 12px cyan, 0 0 24px cyan;
+}
+
+/* Learn Section */
+.learn h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in;
+    margin-bottom: 10px;
+}
+
+button, a {
+    padding: 10px 20px;
+    background: transparent;
+    color: cyan;
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 12px cyan, inset 0 0 8px cyan;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+button:hover, a:hover {
+    background: cyan;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

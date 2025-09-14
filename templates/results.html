@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>RESULTS</title>
+    <link rel="stylesheet" href="static/result.css">
+</head>
+<body>
+    <div class="main">
+        <div class="heading"> 
+            <h1>Your Resume is Tailored for "{{data.role}}"</h1>
+        </div>
+
+        <div class="content">
+            <div class="content1">
+                <h1>✅Your Skills</h1>
+                <ul>
+                    {% for skill in data.skills %}
+                    <li>{{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="content2">
+                <h1>❌ Missing Skills</h1>
+                <ul>
+                    {% for skill in data.missing %}
+                    <li>{{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="tips">
+                <h1>Tips to Improve</h1>
+                <ul>
+                    {% for tip in data.tips %}
+                    <li>{{tip}}</li>
+                    {% endfor %}
+                </ul>
+        </div>
+        <div class="projects">
+            <h1>Recommended Projects</h1>
+            <ul>
+                {% for project in data.projects %}
+                <li>
+                    <a href="{{ url_for('project_roadmap', project_name=project) }}">
+                        {{ project }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="learn">
+            <h1>Want to learn the missing skills?</h1>
+        </div>
+        <div class="learn">
+            <button onclick="window.location.href='/learn'">Click Here</button>
+        </div>
+
+        <div class="learn">
+            <h1>Want to apply for jobs?</h1>
+        </div>
+        <div class="learn">
+            <a href="https://www.linkedin.com/jobs/search-results/?keywords={{ data.role }}" target="_blank" >Apply Now </a>
+        </div>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>{{ project_name }} - Roadmap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='project.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="heading"> 
+            <h1>📌 Roadmap for {{ project_name }}</h1>
+        </div>
+
+        <div class="content">
+            {% for phase in roadmap.phases %}
+                <div class="phase-card">
+                    <h2>{{ phase.phase }}</h2>
+                    <p>{{ phase.description }}</p>
+                    <p><b>Skills:</b> {{ ", ".join(phase.skills) }}</p>
+                    <p><b>Tools:</b> {{ ", ".join(phase.tools) }}</p>
+                    <ul>
+                        {% for task in phase.tasks %}
+                            <li>{{ task }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="learn">
+            <a href="{{ url_for('results') }}">⬅ Back to Results</a>
+        </div>
+    </div>
+</body>
+</html>
